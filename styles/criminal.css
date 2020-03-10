@@ -1,9 +1,8 @@
 .criminalsContainer {
     display: flex;
     flex-flow: wrap;
-    justify-content: space-around;
     text-align: center;
-    background-color: antiquewhite;    
+    background-color: goldenrod;    
 }
 
 .criminalInfo {
