@@ -8,13 +8,13 @@ contentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
 
         const noteText = document.querySelector("#noteText").value
-        // const timeStamp = document.querySelector("#timeStamp").value
+        const timeStamp = document.querySelector("#timeStamp").value
         const criminalName = document.querySelector("#criminal").value
 
         // Make a new object representation of a note
         const newNote = {
             noteText: noteText,
-            // timeStamp: timeStamp,
+            timeStamp: timeStamp,
             criminal: criminalName
         }
 
@@ -34,7 +34,10 @@ const render = () => {
             <label for="noteText">Note:</label>
             <input type="text" id="noteText">
         </fieldset>
-       
+        <fieldset>
+            <label for="timeStamp">Time:</label>
+            <input type="date" id="timeStamp">
+        </fieldset>
         <fieldset>
             <label for="criminal">Criminal:</label>
             <input type="text" id="criminal">
