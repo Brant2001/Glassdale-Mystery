@@ -18,7 +18,7 @@ eventHub.addEventListener("crimeSelected", event => {
         return false
     })
     //clears the inner HTML of the criminal list 
-    //so that we don't keep adding to itself
+    //so that we don't keep adding to it
     contentTarget.innerHTML = ""
 
     for (const criminalObject of guiltyCriminals) {
