@@ -8,8 +8,14 @@ const dispatchStateChangeEvent = () => {
     eventHub.dispatchEvent(noteStateChangedEvent)
 }
 
-const getNotes = () => {
-    fetch('http://localhost:8088/notes')
+
+//this creates a copy of the info so we can use it somewhere else
+export const useNotes = () => notes.slice()
+
+
+//this grabs the notes from the server
+export const getNotes = () => {
+    return fetch('http://localhost:8088/notes')
         .then(response => response.json())
         .then(parsedNotes => {
             notes = parsedNotes
@@ -17,8 +23,10 @@ const getNotes = () => {
 
 }
 
+
+//this saves each note to the server
 export const saveNote = note => {
-    fetch('http://localhost:8088/notes', {
+    return fetch('http://localhost:8088/notes', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
