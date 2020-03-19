@@ -1,0 +1,17 @@
+
+.invisible {
+    display: none;
+}
+
+.notesContainer {
+    display: flex;
+    flex-flow: wrap column;
+    text-align: center;
+    border: black 5px;
+    width: 25%
+}
+
+.note {
+    border: black 5px;
+    width: 100%;
+}

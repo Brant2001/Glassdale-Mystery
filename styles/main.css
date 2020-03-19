@@ -1,3 +1,8 @@
+@import "./criminals.css";
+@import "./filters.css";
+@import "./notes.css";
+
+
 .listsContainer {
     display: flex;
     flex-direction: row;
