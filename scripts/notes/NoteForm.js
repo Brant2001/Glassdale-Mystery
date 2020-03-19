@@ -3,9 +3,18 @@ import { saveNote } from "./NoteDataProvider.js"
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
 
+let isVisible = false
 
 eventHub.addEventListener("noteFormButtonClicked", customEvent => {
-    NoteForm()
+    isVisible = !isVisible
+    
+    if(isVisible){
+        contentTarget.classList.remove("invisible")
+    }
+    else{
+        contentTarget.classList.add("invisible")
+    }
+    
 })
 
 
@@ -31,6 +40,7 @@ contentTarget.addEventListener("click", clickEvent => {
 
 
 const render = () => {
+    contentTarget.classList.add("invisible")
     contentTarget.innerHTML = `
         <fieldset>
             <label for="noteText">Note:</label>
