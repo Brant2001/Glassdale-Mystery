@@ -8,7 +8,7 @@ import { useConvictions } from "./ConvictionProvider.js"
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".filters__crime")
 
-const ConvictionSelect = () => {
+export const ConvictionSelect = () => {
     const convictions = useConvictions()
 // On the content target, listen for a "change" event.
     eventHub.addEventListener("change", clickEvent => {
@@ -43,5 +43,3 @@ const ConvictionSelect = () => {
 }
     render(convictions)
 }
-
-export default ConvictionSelect

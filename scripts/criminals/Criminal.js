@@ -1,11 +1,16 @@
 const Criminal = (criminalObject) => {
     return `
         <section class="criminalInfo">
-            <div><h3>${criminalObject.name}</h3></div>
-            <div>Age: ${criminalObject.age}</div>
-            <div>Crime: ${criminalObject.conviction}</div>
-            <div>Term Start: ${new Date(criminalObject.incarceration.start).toLocaleDateString('en-US')}</div>
-            <div>Term End: ${new Date(criminalObject.incarceration.end).toLocaleDateString('en-US')}</div>
+            <h3>${criminalObject.name}</h3>
+            <div class="criminal__details">
+                <p>Age: ${criminalObject.age}</p>
+                <p>Crime: ${criminalObject.conviction}</p>
+                <p>Incarcerated between:
+                    ${new Date(criminalObject.incarceration.start).toLocaleDateString()} and
+                    ${new Date(criminalObject.incarceration.end).toLocaleDateString()}
+                </p>
+                <button id="associates--${criminalObject.id}">Show Associates</button>
+            </div>
         </section>
         
     `

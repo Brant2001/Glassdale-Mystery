@@ -59,8 +59,6 @@ const render = () => {
     `
 }
 
-const NoteForm = () => {
+export const NoteForm = () => {
     render()
 }
-
-export default NoteForm
