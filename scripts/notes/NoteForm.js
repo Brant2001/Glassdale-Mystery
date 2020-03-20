@@ -1,3 +1,7 @@
+/*
+    This component creates the Note Form 
+*/
+
 import { saveNote } from "./NoteDataProvider.js"
 
 const contentTarget = document.querySelector(".noteFormContainer")
