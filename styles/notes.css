@@ -1,14 +1,14 @@
 
 .invisible {
-    display: none;
+    display: none !important;
 }
 
 .notesContainer {
     display: flex;
     flex-flow: wrap column;
     text-align: center;
-    border: black 5px;
-    width: 25%
+    border: 5px solid black ;
+    min-width: 25%
 }
 
 .note {

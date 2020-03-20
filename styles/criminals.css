@@ -2,8 +2,8 @@
     display: flex;
     flex-flow: wrap;
     text-align: center;
-    background-color: goldenrod;  
-    /* max-width: 75%;   */
+    background-color: goldenrod; 
+    justify-content: space-evenly;
 }
 
 .criminalInfo {
