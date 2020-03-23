@@ -1,3 +1,6 @@
+/*
+    responsible for getting and managing the notes data from the database
+*/
 let notes = []
 
 const eventHub = document.querySelector(".container")
