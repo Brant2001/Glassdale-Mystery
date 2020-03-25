@@ -8,11 +8,21 @@ import { NoteForm } from './notes/NoteForm.js'
 import { NotesList } from './notes/NoteList.js'
 import './criminals/KnownAssociatesDialog.js'
 import { getNotes } from './notes/NoteDataProvider.js'
+import { WitnessStatementButton } from './witnesses/WitnessStatementButton.js'
+import './witnesses/WitnessList.js'
 
-getConvictions().then(ConvictionSelect)
-getCriminals().then(getNotes).then(CriminalList).then(NotesList)
+getCriminals()
+    .then(CriminalList)
+    .then(NotesList)
+    .then(NoteForm)
+    
+    
+    
+getConvictions().then(ConvictionSelect)    
+    
 
-DisplayNoteFormButton()
 DisplayNotesButton()
-NoteForm()
+DisplayNoteFormButton()
 
+
+WitnessStatementButton()
