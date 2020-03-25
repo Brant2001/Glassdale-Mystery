@@ -51,9 +51,16 @@ const render = () => {
         //this takes the notes and converts it from an array of Objects to an array of Strings
         contentTarget.innerHTML = allTheNotes.map(
             currentNoteObject => { 
-                const relatedCriminal = allTheCriminals.find(criminal => criminal.id === currentNoteObject.criminalId)
-                return Note(currentNoteObject, relatedCriminal)
-            }
+
+                // Find the criminal for te current note
+                const theFoundCriminal = allTheCriminals.find(
+                    (currentCriminalObject) => {
+                        return currentNoteObject.criminal === currentCriminalObject.id
+                }
+            )
+
+            return Note(currentNoteObject, theFoundCriminal)
+        }
             //this joins all the strings in the array into one big string so that we don't have commas between each note
         ).join("")
     })   
