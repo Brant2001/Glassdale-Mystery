@@ -3,7 +3,7 @@ pulls together the nececarry components to create the list of notes
 */
 
 //importing the necessary components
-import { getNotes, useNotes } from "./NoteDataProvider.js"
+import { getNotes, useNotes, deleteNote } from "./NoteDataProvider.js"
 import { useCriminals } from "../criminals/CriminalProvider.js"
 import { Note } from "./Note.js"
 
@@ -15,6 +15,14 @@ const eventHub = document.querySelector(".container")
 
 //declaring variables for the State
 let isVisible = false
+
+
+contentTarget.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteNote--")) {
+        const [prefix, noteId] = clickEvent.target.id.split("--")
+        deleteNote(noteId)
+    }
+})
 
 
 eventHub.addEventListener("noteStateChanged", customEvent => {
