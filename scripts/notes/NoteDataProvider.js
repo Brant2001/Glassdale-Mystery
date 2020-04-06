@@ -1,5 +1,6 @@
 /*
-    responsible for getting and managing the notes data from the database
+    Responsible for getting and managing the notes data from the database
+    resposible for data operations
 */
 let notes = []
 
@@ -40,3 +41,11 @@ export const saveNote = note => {
     .then(dispatchStateChangeEvent)
 }
 
+//This Deletes the notes from the api when the delete button is clicked
+export const deleteNote = noteId => {
+    return fetch(`http://localhost:8088/notes/${noteId}`, {
+        method: "DELETE"
+    })
+        .then(getNotes)
+        .then(dispatchStateChangeEvent)
+}
